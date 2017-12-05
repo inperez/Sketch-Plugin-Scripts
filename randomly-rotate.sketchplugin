@@ -1,5 +1,12 @@
-for (var i=0; i<selection.count(); i++) {
-	var layer = selection[i];
+log('Random Rotate');
+var documentName = context.document.displayName();
+log('The current document is named: ' + documentName);
+
+var selectedLayers = context.selection;
+var selectedCount = selectedLayers.count();
+
+for (var i=0; i<selectedLayers.count(); i++) {
+	var layer = selectedLayers[i];
 
 	[layer setRotation:Math.random() * 360];
 }
